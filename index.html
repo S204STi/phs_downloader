@@ -2,14 +2,23 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation-flex.min.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="styles/styles.css">
     <title>Hello World!</title>
   </head>
   <body ng-app="phs_downloader">
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
 
     <ng-header></ng-header>
+    <div class="content">
+
+    </div>
+    <div class="footer">
+    	<p>
+    		This app is using node <script>document.write(process.versions.node)</script>,
+    		Chrome <script>document.write(process.versions.chrome)</script>,
+    		and Electron <script>document.write(process.versions.electron)</script>.
+    	</p>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="app/app.js"></script>
     <script src="app/controllers.js"></script>

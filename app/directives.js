@@ -6,3 +6,9 @@ app.directive('ngHeader', function(){
 		controller: "headerController as HDC"
 	};
 });
+
+app.directive('ngFooter', function(){
+	return {
+		templateUrl: './partials/_footer.html'
+	};
+});
