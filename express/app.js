@@ -7,8 +7,27 @@ var express = require('express'),
     bodyparser = require('body-parser');
 
 // var routes = require('./routes/index');
+var xml2jsDefaults = {
+    explicitArray: false,
+    normalize: false,
+    normalizeTags: false,
+    trim: true
+};
 
-var app = express();
+var app = express(),
+    http = require('http'),
+    server = http.createServer(app),
+    xmlparser = require('express-xml-bodyparser');
+
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(xmlparser());
+
+app.get('./app/services.js', function(req, res, next) {
+  return req.body;
+  // req.body contains the parsed xml
+
+});
 
 //catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -38,5 +57,7 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
+
+server.listen(1337);
 
 module.exports = app;
