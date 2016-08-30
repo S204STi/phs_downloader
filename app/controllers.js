@@ -6,5 +6,6 @@ app.controller('appController', ['screen', function(screen){
 
 app.controller('headerController', ['downloadService', function(downloadService){
 	var vm = this;
-	vm.downloadAll = downloadService.downloadAll();
+	vm.getAll = downloadService.getAll();
+	// vm.setDirectory = downloadService.setDirectory();
 }]);

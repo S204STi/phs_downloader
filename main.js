@@ -1,6 +1,8 @@
 'use strict';
 
+console.log('main.js running');
 const {app, BrowserWindow} = require('electron');
+// var fs = require('fs');
 
 // Keep a global reference of the window object, if you don't, the window will be closed automatically when the JavaScript object is garbage collected.
 let win;
@@ -39,4 +41,8 @@ app.on('activate', () => {
   if (win === null) {
     createWindow();
   }
+});
+
+app.on('will-download', (event, item) => {
+  item.setSavePath();
 });
